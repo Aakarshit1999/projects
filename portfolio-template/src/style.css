@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+:root {
+  --header-color: #202020;
+  --white: #fff;
+  --background-color: #fff;
+  --blue: #199DFF;
+  --orange: #FFB814;
+  --triangle-size: 13vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'noto sans';
+  background-color: var(--background-color);
+  color: var(--white);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.orange {
+  background-color: var(--orange);
+}
+
+header {
+  position: relative;
+  height: 88vh;
+  background-color: var(--header-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+header:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-bottom: var(--triangle-size) solid var(--background-color);
+  border-left: var(--triangle-size) solid transparent;
+}
+
+.bg-text-wrapper {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-text {
+  position: fixed;
+  text-align: center;
+  top: -10vh;
+  left: -55vh;
+  font-family: 'noto sans';
+  font-size: 60vh;
+  line-height: 52vh;
+  font-weight: bold;
+  opacity: 0.02;
+  margin: 0;
+}
+
+header h1 {
+  font-size: 72px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+}
+
+header p {
+  width: 100%;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1;
+}
+
+.buttons {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.buttons a {
+  color: var(--header-color);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 2em;
+  padding: 1em 2.5em;
+  transition: 0.2s;
+  clip-path: polygon(1em 0, 100% 0, 100% calc(100% - 1em), calc(100% - 1em) 100%, 0 100%, 0 1em);
+}
+
+.buttons a:hover, .buttons a:focus,
+#contact form input[type=submit]:hover,
+#contact form input[type=submit]:focus {
+  opacity: 0.5;
+}
+
+nav {
+  position: absolute;
+  top: 3vh;
+  right: 3vh;
+  z-index: 1;
+}
+
+nav a {
+  position: relative;
+  font-size: 20px;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5em 1.3em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+}
+
+nav a:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--blue);
+  transition: 0.2s;
+}
+
+nav a:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--orange);
+  transition: 0.2s;
+}
+
+nav a:focus {
+  outline: none;
+}
+
+nav a:hover:before, nav a:hover:after,
+nav a:focus:before, nav a:focus:after {
+  width: 80%;
+}
+
+nav i {
+  transform: scale(1.8);
+}
+
+#projects {
+  position: relative;
+  padding: calc(var(--triangle-size) / 2);
+  padding-right: 0;
+}
+
+header:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: calc(var(--triangle-size) * -1);
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-bottom: var(--triangle-size) solid transparent;
+  border-left: var(--triangle-size) solid var(--header-color);
+}
+
+#list {
+  position: relative;
+  clip-path: polygon(calc(var(--triangle-size)*0.75) 0,
+                     calc(100% - calc(var(--triangle-size)*0.75)) 0,
+                     100% calc(calc(var(--triangle-size)*0.75) * -1),
+                     100% calc(100% + calc(var(--triangle-size)*0.75)),
+                     calc(100% - calc(var(--triangle-size)*0.75)) 100%,
+                     calc(var(--triangle-size)*0.75) 100%,
+                     0 calc(100% - calc(var(--triangle-size)*0.75)),
+                     0 calc(var(--triangle-size)*0.75));
+  width: 100%;
+  padding: 75px;
+  background-color: var(--header-color);
+}
+
+#list:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: calc((var(--triangle-size) * 0.75) * -1);
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-bottom: calc((var(--triangle-size) * 0.75)) solid var(--header-color);
+  border-left: calc((var(--triangle-size) * 0.75)) solid transparent;
+}
+
+#list:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: calc((var(--triangle-size) * 0.75) * -1);
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-top: calc((var(--triangle-size) * 0.75)) solid var(--header-color);
+  border-left: calc((var(--triangle-size) * 0.75)) solid transparent;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+  z-index: 1;
+}
+
+.list-item {
+  padding: 10px 0;
+}
+
+.list-item img {
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: 10px 20px 25px 0;
+  clip-path: polygon(1em 0, 100% 0, 100% calc(100% - 1em), calc(100% - 1em) 100%, 0 100%, 0 1em);
+}
+
+.list-item .buttons {
+  justify-content: flex-end;
+}
+
+.list-item .buttons a {
+  padding: 0.7em 2em;
+  margin:0 1em;
+}
+
+hr:nth-child(2n+1) {
+  border-color: var(--blue);
+}
+
+hr:nth-child(4n+1) {
+  border-color: var(--orange);
+}
+
+hr, br {
+  clear: both;
+}
+
+#contact {
+  position: relative;
+  background-color: var(--header-color);
+  padding: 75px;
+  overflow: hidden;
+  clip-path: polygon(0 calc(var(--triangle-size) * -1),
+                     var(--triangle-size) 0,
+                     calc(100% - var(--triangle-size)) 0,
+                     100% var(--triangle-size),
+                     100% 100%,
+                     0 100%);
+}
+
+#projects:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-top: calc((var(--triangle-size))) solid transparent;
+  border-left: calc((var(--triangle-size))) solid var(--header-color);
+}
+
+.column {
+  width: 50%;
+  padding: 15px;
+}
+
+.column p {
+  font-size: 24px;
+  margin: 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+#contact form label {
+  font-size: 24px;
+}
+
+#contact form input, #contact form textarea {
+  width: 90%;
+  font-family: 'noto sans';
+  font-size: 18px;
+  color: var(--header-color);
+  background-color: var(--white);
+  border: none;
+  padding: 0.2em 0.7em;
+  margin-bottom: 15px;
+  clip-path: polygon(0.7em 0, 100% 0, 100% calc(100% - 0.7em), calc(100% - 0.7em) 100%, 0 100%, 0 0.7em);
+}
+
+#contact form input[type=submit] {
+  background-color: var(--orange);
+  width: auto;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  margin: 1em 0;
+  padding: 0.5em 2.5em;
+  transition: 0.2s;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px var(--white) inset !important;
+}
+
+#contact form div {
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+
+
+
+@media screen and (max-width: 760px) {
+  
+  :root {
+    --triangle-size: 10vmax;
+  }
+  
+  header {
+    height: 96vh;
+  }
+  
+  header h1 {
+    margin-top: 20px;
+    font-size: 40px;
+  }
+
+  header p {
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  .buttons a, .list-item .buttons a {
+    margin: 0 1em;
+    padding: 0.7em 1em;
+    font-size: 14px;
+  }
+  
+  nav {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 0.3em 0.7em;
+  }
+  
+  nav i {
+    transform: scale(1.6);
+  }
+  
+  #list {
+    padding: 20px;
+    padding-top: 35px;
+  }
+  
+  .list-item img {
+    width: 120px;
+    height: 120px;
+    margin: 10px 10px 5px 0;
+  }
+  
+  #contact {
+    padding: 20px;
+    padding-top: 35px;
+  }
+  
+  .left, .right {
+    clear: both;
+    width: 100%;
+  }
+  
+  #contact form input, #contact form textarea, #contact form label {
+    width: 100%;
+    font-size: 16px;
+    margin: 0.3em 0;
+  }
+  
+  #contact p {
+    font-size: 16px;
+  }
+  
+  #contact form div {
+    width: 100%;
+  }
+  
+  #contact form input[type=submit] {
+    padding: 0.5em 2em;
+    margin: 0.3em 0;
+  }
+  
+}
