@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('info.json', function(data) {
+       $.each(data.info, function(i, f) {
+          var tblRow = "<tr>"  + address + "</td>" 
+          
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+
+
+<head >
+    <style>
+        
+        body{
+            background-image: url("https://www.usedcarsarlingtontx.com/uploads/styles/mrbill_new_background-min.png");
+            height: 100%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-left: 70%;
+  margin-top: 6%;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+.google-maps {
+            position: relative;
+            padding-bottom: 96%; 
+            height: 0;
+            overflow: hidden;
+        }
+        .google-maps iframe {
+            position: absolute;
+            margin-bottom: 39%;
+            top: 0;
+            left: 0;
+            width: 80% !important;
+            height: 60% !important;
+        }
+</style>
+</head>
+<body>
+
+ 
+  <table  style="width:25%;color:rgb(236, 231, 209);background-color: rgb(77, 65, 65);" >
+      <tr>
+        <th>Address</th>
+        <td>
+          <input type="text" name="address"  value="SNU,Greater Noida -201314">
+          
+        </td>
+    
+      </tr>
+     
+      </table>  
+      <div class="container">
+         <div class="google-maps">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.431922959661!2d77.573174314966!3d28.526734495612473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceb4eaaaaaaab%3A0x321412756718874c!2sShiv%20Nadar%20University!5e0!3m2!1sen!2sin!4v1581114260602!5m2!1sen!2sin" width="60" height="45" frameborder="0" style="border:0"></iframe>
+      </div>
+      <a href="http://maps.google.com/maps?saddr=&daddr=">Going South</a>
+      <a href="http://maps.google.com/maps?q=BG snu,greater Noida">location</a>
+      <a href="http://maps.google.com/maps?saddr={CustomerAddress}&daddr={StoreAddrress}">Store directions</a>
+      </div>
+  </body>
+</body>

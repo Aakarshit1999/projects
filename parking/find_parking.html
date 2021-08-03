@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+<head >
+    <style>
+        
+        body{
+            background-image: url("https://www.usedcarsarlingtontx.com/uploads/styles/mrbill_new_background-min.png");
+            height: 100%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+input[type=text], select {
+  width: 70%;
+  
+  margin: 4px 0;
+  display: inline-block;
+  
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #4CAF50;
+ 
+  padding: 8px 8px;
+  
+  margin:   30px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+  padding-left: 30%;
+}
+
+</style>
+</head>
+<body>
+<h1 style="text-align: center;margin-top: 5%;"><b>FIND MY PARKING</b></h1>
+
+
+<form action="http://127.0.0.1:5000/findparking" method="post" style=" width:40%;margin-top: 10%; margin-left: 39%;">
+
+<input type="text" name="pincode" placeholder="please enter pincode" >
+<br>
+<br>
+<input type="text" name="current location" placeholder="please enter  your current location">
+<br>
+<br>
+<input type="submit" value="search parking loactions">
+</form>
+</div>
+</body>
+</html>
